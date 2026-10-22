@@ -1,0 +1,177 @@
+.hero { padding: 122px 24px 64px; background: var(--bg); overflow: clip; }
+.inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+.copy { text-align: center; }
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 11px 16px; border: 1px solid var(--border-default); border-radius: 999px; background: var(--card); color: var(--link); font-size: 12px; font-weight: 650; animation: arrive 600ms cubic-bezier(.22,1,.36,1) both; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+.heading { margin: 19px 0 12px; font-size: clamp(34px, 4.8vw, 58px); font-weight: 650; line-height: 1.4; letter-spacing: -.035em; }
+.heading > span { display: block; color: var(--text); }
+.heading > span:last-child { color: var(--link); }
+.description { font-size: 16px; line-height: 1.7; color: var(--muted); animation: arrive 650ms 100ms cubic-bezier(.22,1,.36,1) both; }
+.actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 13px; animation: arrive 650ms 180ms cubic-bezier(.22,1,.36,1) both; }
+.actions a { display: inline-flex; justify-content: center; align-items: center; gap: 4px; min-height: 44px; padding: 10px 16px; border-radius: 13px; font-size: 14px; font-weight: 500; transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease, transform 200ms cubic-bezier(.22,1,.36,1); }
+.primary { background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary); }
+.secondary { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+.actions a:active { transform: scale(.97); }
+.workspace { margin-top: 18px; padding: 16px; border: 1px solid var(--border-default); border-radius: 20px; background: var(--section); animation: arrive 800ms 240ms cubic-bezier(.22,1,.36,1) both; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; color: var(--muted); font-size: 13px; }
+.toolbar > span { display: inline-flex; align-items: center; gap: 6px; }
+.status { display: inline-block; width: 15px; height: 15px; border-radius: 50%; background: var(--primary); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.card { padding: 16px; border: 1px solid var(--border-default); border-radius: 16px; background: var(--card); animation: arrive 700ms cubic-bezier(.22,1,.36,1) both; transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+.card:nth-child(1) { animation-delay: 320ms; }
+.card:nth-child(2) { animation-delay: 400ms; }
+.card:nth-child(3) { animation-delay: 480ms; }
+.card:nth-child(4) { animation-delay: 560ms; }
+.icon { display: block; margin-bottom: 12px; color: var(--link); transition: transform 300ms cubic-bezier(.22,1,.36,1); }
+.card h2 { font-size: 15px; font-weight: 650; line-height: 1.5; letter-spacing: -.025em; }
+.card p { margin-top: 6px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+@keyframes arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover { background: var(--primary-hover); box-shadow: 0 6px 28px rgb(var(--accent-rgb) / 0.125490196); }
+  .secondary:hover { background: var(--card); border-color: var(--link); }
+  .badge:hover { border-color: var(--link); }
+  .card:hover { background: var(--surface); border-color: var(--link); box-shadow: inset 0 1px 0 rgb(var(--accent-rgb) / 0.070588235); }
+  .card:hover .icon { transform: translateY(-3px) rotate(-5deg); }
+}
+@media (max-width: 900px) {
+  .hero { padding: 106px 16px 48px; }
+  .heading { font-size: clamp(32px, 5vw, 46px); }
+}
+@media (max-width: 540px) {
+  .hero { padding: 102px 12px 40px; }
+  .badge { font-size: 9px; padding: 10px 12px; }
+  .heading { font-size: clamp(29px, 7.7vw, 40px); line-height: 1.35; margin-top: 22px; }
+  .description { max-width: 330px; margin: 0 auto; font-size: 13px; }
+  .actions { margin-top: 18px; }
+  .workspace { padding: 12px; border-radius: 18px; margin-top: 24px; }
+  .toolbar { font-size: 11px; margin-bottom: 16px; }
+  .card { padding: 14px 11px; border-radius: 13px; }
+  .card h2 { font-size: 13px; }
+  .card p { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero *, .hero *::before, .hero *::after { animation: none !important; transition: none !important; transform: none !important; }
+}
+
+/* Hero-only expressive motion; ambient effects pause outside the viewport. */
+.hero { position: relative; isolation: isolate; }
+.hero::before { content: ''; position: absolute; z-index: -1; inset: 15% 5% 0; pointer-events: none; background: radial-gradient(ellipse at 50% 65%, rgb(var(--accent-rgb) / 0.070588235), transparent 65%); animation: atmosphere 9s ease-in-out infinite alternate; }
+.heading > span:last-child { background: linear-gradient(105deg, var(--link-hover) 20%, var(--accent-text) 45%, var(--link-hover) 65%); background-size: 220% 100%; background-clip: text; -webkit-text-fill-color: transparent; animation: headlineReveal 950ms cubic-bezier(.22,1,.36,1) both, gradientDrift 7s 1s ease-in-out infinite alternate; }
+.badge { position: relative; }
+.dot, .status { position: relative; }
+.dot::after, .status::after { content: ''; position: absolute; inset: -4px; border: 1px solid rgb(var(--primary-rgb) / 0.439215686); border-radius: inherit; animation: signal 3s ease-out infinite; }
+.status::after { animation-delay: 1s; }
+.workspace { position: relative; isolation: isolate; animation: arrive 800ms 240ms cubic-bezier(.22,1,.36,1) both, workspaceFloat 7s 1100ms ease-in-out infinite; }
+.workspace::before { content: ''; position: absolute; z-index: -1; inset: -18px; border-radius: 35px; background: radial-gradient(ellipse, rgb(var(--primary-rgb) / 0.050980392), transparent 72%); pointer-events: none; animation: atmosphere 6s ease-in-out infinite alternate; }
+.card { position: relative; overflow: hidden; isolation: isolate; }
+.card::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; background: radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgb(var(--accent-rgb) / 0.125490196), transparent 75%); transition: opacity 250ms ease; }
+.actions a { position: relative; overflow: hidden; isolation: isolate; }
+.primary::before { content: ''; position: absolute; inset: -40% 0; pointer-events: none; background: linear-gradient(110deg, transparent 30%, #ffffff65 50%, transparent 70%); transform: translateX(-150%); }
+.actions a svg { transition: transform 250ms cubic-bezier(.22,1,.36,1); }
+@keyframes headlineReveal { from { opacity: 0; transform: translateY(16px); filter: blur(4px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@keyframes gradientDrift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+@keyframes signal { 0% { transform: scale(.7); opacity: .75; } 75%, 100% { transform: scale(1.8); opacity: 0; } }
+@keyframes workspaceFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes atmosphere { from { opacity: .35; transform: scale(.96); } to { opacity: 1; transform: scale(1.04); } }
+@keyframes shine { from { transform: translateX(-150%); } to { transform: translateX(150%); } }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover::before { opacity: 1; }
+  .card:hover .icon { transform: translateY(-4px) rotate(-8deg) scale(1.08); }
+  .primary:hover::before, .primary:focus-visible::before { animation: shine 650ms cubic-bezier(.22,1,.36,1); }
+  .actions a:hover svg, .actions a:focus-visible svg { transform: translate(2px, -2px); }
+}
+.hero[data-visible='false']::before,
+.hero[data-visible='false'] *,
+.hero[data-visible='false'] *::before,
+.hero[data-visible='false'] *::after { animation-play-state: paused; }
+@media (pointer: coarse) { .workspace { animation: arrive 800ms 240ms cubic-bezier(.22,1,.36,1) both; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .hero *, .hero *::before, .hero *::after { animation: none !important; transition: none !important; transform: none !important; filter: none !important; }
+  .heading > span:last-child { background: none; -webkit-text-fill-color: var(--link); }
+  .dot::after, .status::after, .primary::before { display: none; }
+}
+
+.primary:active { background: var(--primary-active); color: var(--on-active); }
+.secondary:active { background: var(--secondary-active); color: var(--text); }
+
+/* Open capability console: black glass lets the hero's data paths frame it. */
+.workspace {
+  margin-top: 38px;
+  padding: 0 20px 20px;
+  border: 1px solid rgb(var(--border-default-rgb) / .55);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgb(var(--surface-rgb) / .32), rgb(var(--bg-rgb) / .92) 55%, rgb(var(--accent-rgb) / .035));
+  box-shadow: 0 24px 70px #0006, inset 0 1px 0 rgb(var(--primary-rgb) / .13);
+}
+.workspace::before {
+  inset: -1px 20% auto;
+  height: 1px;
+  border-radius: 0;
+  background: linear-gradient(90deg, transparent, var(--link), var(--accent-text), transparent);
+  opacity: .65;
+  animation: none;
+}
+.toolbar {
+  min-height: 62px;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgb(var(--border-default-rgb) / .4);
+  color: var(--secondary-text);
+  font-size: 12px;
+  letter-spacing: .01em;
+}
+.toolbar > span { gap: 12px; }
+.status { width: 7px; height: 7px; background: var(--link); box-shadow: 0 0 12px rgb(var(--primary-rgb) / .3); }
+.grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-top: 18px; }
+.card {
+  --card-accent: var(--link);
+  padding: 20px 18px 22px;
+  border-color: rgb(var(--border-default-rgb) / .65);
+  border-radius: 14px;
+  background: linear-gradient(165deg, rgb(var(--surface-rgb) / .5), rgb(var(--bg-rgb) / .72));
+}
+.card:nth-child(even) { --card-accent: var(--accent-text); }
+.cardTop { display: flex; align-items: center; justify-content: space-between; }
+.cardTop .icon { margin: 0; color: var(--card-accent); }
+.cardNumber { font-family: var(--font-mono), monospace; font-size: 10px; letter-spacing: .1em; color: var(--muted); }
+.artwork { display: block; width: 100%; height: 82px; margin: 18px 0 20px; stroke: var(--card-accent); stroke-width: 1; opacity: .7; transition: opacity 300ms ease, transform 400ms cubic-bezier(.22,1,.36,1); }
+.signalAccent { stroke: var(--card-accent); stroke-width: 1.5; }
+.signalNode { fill: var(--card-accent); stroke: none; }
+.designAnimation { opacity: 1; }
+.aiAnimation { opacity: 1; }
+.saasAnimation { opacity: 1; }
+.saasAnimation > svg { display: block; width: 100% !important; height: 100% !important; transform: scale(1.25); transform-origin: center; }
+.aiAnimation > svg { display: block; width: 100% !important; height: 100% !important; transform: scale(1.25); transform-origin: center; }
+.designAnimation > svg { display: block; width: 100% !important; height: 100% !important; transform: scale(1.25); transform-origin: center; }
+.developmentAnimation { position: relative; opacity: 1; }
+.developmentAnimation > svg { position: absolute; display: block; width: 150px !important; height: 150px !important; left: calc(50% - 75px); top: calc(50% - 75px); }
+.card h2 { font-size: 15px; letter-spacing: -.02em; }
+.card p { font-size: 12px; margin-top: 5px; }
+.card::before { background: radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgb(var(--primary-rgb) / .12), transparent 75%); }
+.card:nth-child(even)::before { background: radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgb(var(--accent-rgb) / .1), transparent 75%); }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { background: linear-gradient(165deg, rgb(var(--surface-rgb) / .7), rgb(var(--bg-rgb) / .8)); border-color: var(--card-accent); box-shadow: inset 0 1px 0 rgb(var(--primary-rgb) / .12); }
+  .card:hover .artwork { opacity: 1; transform: translateY(-3px); }
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card { padding: 18px; }
+  .artwork { height: 66px; margin: 10px 0 14px; }
+}
+@media (max-width: 540px) {
+  .workspace { margin-top: 30px; padding: 0 12px 12px; border-radius: 18px; }
+  .toolbar { min-height: 54px; font-size: 10px; }
+  .toolbar > span { gap: 9px; }
+  .grid { gap: 9px; padding-top: 12px; }
+  .card { padding: 15px 12px 18px; border-radius: 11px; }
+  .card h2 { font-size: 13px; }
+  .card p { font-size: 11px; }
+  .cardNumber { font-size: 9px; }
+  .artwork { height: 57px; margin: 10px 0 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .artwork { transition: none; transform: none !important; }
+}
+
+
+/* Scroll reveal owns panel and card entrances. */
+.workspace, .card { animation: none; }

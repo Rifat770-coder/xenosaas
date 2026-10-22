@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "name": "XenoSaas Black Blue Solar Red",
+    "version": "1.0.0",
+    "format": "semantic-color-tokens",
+    "description": "Color-only migration for an existing Next.js website. This file is configuration data, not an executable framework preset.",
+    "defaultTheme": "dark",
+    "solarRed": "#FF2D7A",
+    "integration": "Map semantic aliases into the existing styling system. Do not replace its configuration or add a theme library.",
+    "scope": "colors-only"
+  },
+  "constraints": {
+    "preserve": [
+      "layout",
+      "spacing",
+      "typography",
+      "content",
+      "functionality",
+      "routing",
+      "architecture",
+      "animation timing, motion paths, particle counts and interaction behavior"
+    ],
+    "avoid": [
+      "global literal replacement without semantic context",
+      "new dependencies",
+      "new animations or effects",
+      "forced dark mode overriding an existing theme preference",
+      "lowering text or focus contrast"
+    ],
+    "lightMode": "No light palette is supplied. Preserve an existing light mode and its behavior; do not apply dark surfaces to it implicitly."
+  },
+  "palette": {
+    "black": "#000000",
+    "blue": "#3B82F6",
+    "blueBright": "#60A5FA",
+    "blueLight": "#93C5FD",
+    "solarRed": "#FF2D7A",
+    "solarRedLight": "#FF80AF",
+    "white": "#FFFFFF"
+  },
+  "themes": {
+    "dark": {
+      "colorScheme": "dark",
+      "backgrounds": {
+        "canvas": "#000000",
+        "page": "#05070D",
+        "section": "#090F1C",
+        "elevated": "#101A2C",
+        "subtle": "#0B1220",
+        "inverse": "#F8FAFC",
+        "overlay": "#000000CC"
+      },
+      "foregrounds": {
+        "primary": "#F8FAFC",
+        "secondary": "#CBD5E1",
+        "muted": "#94A3B8",
+        "inverse": "#05070D",
+        "link": "#60A5FA",
+        "linkHover": "#93C5FD",
+        "accent": "#FF80AF",
+        "disabled": "#94A3B8"
+      },
+      "borders": {
+        "subtle": "#1E293B",
+        "default": "#334155",
+        "strong": "#64748B",
+        "interactive": "#64748B",
+        "hover": "#60A5FA",
+        "accent": "#FF2D7A"
+      },
+      "cards": {
+        "background": "#0B1220",
+        "elevatedBackground": "#101A2C",
+        "foreground": "#F8FAFC",
+        "mutedForeground": "#94A3B8",
+        "border": "#334155",
+        "hoverBorder": "#60A5FA"
+      },
+      "buttons": {
+        "primary": {
+          "background": "#3B82F6",
+          "foreground": "#000000",
+          "border": "#3B82F6",
+          "hoverBackground": "#60A5FA",
+          "hoverForeground": "#000000",
+          "activeBackground": "#2563EB",
+          "activeForeground": "#FFFFFF"
+        },
+        "accent": {
+          "background": "#FF2D7A",
+          "foreground": "#000000",
+          "border": "#FF2D7A",
+          "hoverBackground": "#FF80AF",
+          "hoverForeground": "#000000",
+          "activeBackground": "#D91460",
+          "activeForeground": "#FFFFFF"
+        },
+        "secondary": {
+          "background": "#101A2C",
+          "foreground": "#F8FAFC",
+          "border": "#64748B",
+          "hoverBackground": "#17243B",
+          "hoverForeground": "#F8FAFC",
+          "activeBackground": "#1E304D",
+          "activeForeground": "#F8FAFC"
+        },
+        "ghost": {
+          "background": "#00000000",
+          "foreground": "#CBD5E1",
+          "border": "#00000000",
+          "hoverBackground": "#101A2C",
+          "hoverForeground": "#F8FAFC",
+          "activeBackground": "#17243B",
+          "activeForeground": "#F8FAFC"
+        },
+        "disabled": {
+          "background": "#1E293B",
+          "foreground": "#94A3B8",
+          "border": "#64748B"
+        }
+      },
+      "inputs": {
+        "background": "#090F1C",
+        "foreground": "#F8FAFC",
+        "placeholder": "#94A3B8",
+        "border": "#64748B",
+        "hoverBorder": "#60A5FA",
+        "focusBorder": "#60A5FA",
+        "invalidBorder": "#FF80AF",
+        "disabledBackground": "#1E293B",
+        "disabledForeground": "#94A3B8"
+      },
+      "focus": {
+        "ring": "#93C5FD",
+        "offset": "#000000",
+        "usage": "Use existing focus-visible geometry; maintain at least 3:1 contrast against adjacent colors. Retain or restore visible focus if existing styling suppresses it."
+      },
+      "selection": {
+        "background": "#FF2D7A",
+        "foreground": "#000000"
+      },
+      "status": {
+        "info": {
+          "background": "#0B1B34",
+          "foreground": "#93C5FD",
+          "border": "#60A5FA"
+        },
+        "success": {
+          "background": "#0B1B34",
+          "foreground": "#93C5FD",
+          "border": "#60A5FA"
+        },
+        "warning": {
+          "background": "#2A1020",
+          "foreground": "#FFC1D9",
+          "border": "#FF80AF"
+        },
+        "error": {
+          "background": "#2A1020",
+          "foreground": "#FF80AF",
+          "border": "#FF80AF"
+        },
+        "usage": "Preserve distinct labels, icons and validation semantics. Success and info share blue; warning and error share the pink family. Never encode meaning using color alone."
+      },
+      "gradients": {
+        "brand": {
+          "stops": [
+            "#3B82F6",
+            "#FF2D7A"
+          ],
+          "usage": "Recolor existing brand gradients only; preserve stop positions, angle and geometry."
+        },
+        "hero": {
+          "stops": [
+            "#000000",
+            "#0B1830",
+            "#260B1A"
+          ],
+          "usage": "Map to existing hero gradient layers without adding layers."
+        },
+        "text": {
+          "stops": [
+            "#93C5FD",
+            "#FF80AF"
+          ],
+          "usage": "Existing decorative gradient text only; check every rendered stop against its actual background."
+        },
+        "surface": {
+          "stops": [
+            "#090F1C",
+            "#101A2C"
+          ],
+          "usage": "Existing surface gradients only."
+        }
+      },
+      "glows": {
+        "blue": "#3B82F633",
+        "solarRed": "#FF2D7A2E",
+        "mixed": "#8054C733",
+        "usage": "Replace only existing glow colors. Keep existing blur, spread, opacity multipliers, placement and animation."
+      },
+      "dataFlowAnimations": {
+        "line": "#3B82F638",
+        "lineActive": "#60A5FA",
+        "particle": "#60A5FA",
+        "particleAccent": "#FF2D7A",
+        "node": "#93C5FD",
+        "nodeAccent": "#FF80AF",
+        "trail": "#3B82F61F",
+        "glow": "#FF2D7A33",
+        "usage": "Recolor existing data-flow lines, nodes, particles, trails and shaders only. Preserve paths, duration, easing, speed, density, interaction and reduced-motion behavior. Decorative lines may have low contrast; meaningful data graphics must reach 3:1."
+      },
+      "charts": {
+        "series": [
+          "#60A5FA",
+          "#FF80AF",
+          "#CBD5E1",
+          "#3B82F6",
+          "#FF2D7A"
+        ],
+        "grid": "#334155",
+        "axis": "#94A3B8",
+        "tooltipBackground": "#101A2C",
+        "tooltipForeground": "#F8FAFC",
+        "usage": "Preserve data and chart structure; keep existing labels, markers and line patterns to distinguish similar series."
+      },
+      "scrollbar": {
+        "track": "#05070D",
+        "thumb": "#64748B",
+        "thumbHover": "#94A3B8"
+      }
+    }
+  },
+  "accessibility": {
+    "standard": "WCAG 2.2 AA contrast targets; configuration alone is not a compliance certification.",
+    "normalTextMinimumContrast": 4.5,
+    "largeTextMinimumContrast": 3,
+    "meaningfulUIAndGraphicsMinimumContrast": 3,
+    "notes": [
+      "Use black text on base blue #3B82F6 and solar red #FF2D7A buttons; white normal-size text on these base fills fails 4.5:1.",
+      "Use light blue #60A5FA or #93C5FD for links on dark surfaces; base blue is primarily a fill/accent.",
+      "Subtle borders and glows are decorative; use interactive borders for required control boundaries.",
+      "Evaluate transparency after compositing, gradients at their weakest stop, and focus indicators against all adjacent colors.",
+      "Keep existing reduced-motion support; this migration changes no motion.",
+      "Do not use container opacity to simulate disabled tokens; inherited opacity can reduce contrast. Preserve disabled behavior.",
+      "Do not recolor third-party logos, photographs or semantic source imagery without a clear existing theme-controlled tint."
+    ],
+    "verifiedOpaquePairs": [
+      {
+        "role": "primary text",
+        "foreground": "#F8FAFC",
+        "background": "#101A2C",
+        "contrastRatio": 16.64,
+        "target": 4.5
+      },
+      {
+        "role": "muted text",
+        "foreground": "#94A3B8",
+        "background": "#101A2C",
+        "contrastRatio": 6.79,
+        "target": 4.5
+      },
+      {
+        "role": "link",
+        "foreground": "#60A5FA",
+        "background": "#101A2C",
+        "contrastRatio": 6.85,
+        "target": 4.5
+      },
+      {
+        "role": "primary button",
+        "foreground": "#000000",
+        "background": "#3B82F6",
+        "contrastRatio": 5.71,
+        "target": 4.5
+      },
+      {
+        "role": "accent button",
+        "foreground": "#000000",
+        "background": "#FF2D7A",
+        "contrastRatio": 5.91,
+        "target": 4.5
+      },
+      {
+        "role": "primary active",
+        "foreground": "#FFFFFF",
+        "background": "#2563EB",
+        "contrastRatio": 5.17,
+        "target": 4.5
+      },
+      {
+        "role": "accent active",
+        "foreground": "#FFFFFF",
+        "background": "#D91460",
+        "contrastRatio": 4.98,
+        "target": 4.5
+      },
+      {
+        "role": "disabled text",
+        "foreground": "#94A3B8",
+        "background": "#1E293B",
+        "contrastRatio": 5.71,
+        "target": 4.5
+      },
+      {
+        "role": "input boundary",
+        "foreground": "#64748B",
+        "background": "#090F1C",
+        "contrastRatio": 4.02,
+        "target": 3
+      }
+    ]
+  }
+}

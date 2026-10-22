@@ -1,0 +1,78 @@
+@media (max-width: 700px) {
+  .footer {
+    padding-top: 40px;
+    background: radial-gradient(ellipse at 0 35%, rgb(var(--primary-rgb) / .09), transparent 48%), var(--page);
+  }
+  .footer :global(.footer-cta) {
+    position: relative;
+    gap: 22px;
+    padding: 0 0 30px;
+    border-bottom: 0;
+  }
+  .footer :global(.footer-cta h2) {
+    font-size: clamp(30px, 8.8vw, 43px);
+    letter-spacing: -.055em;
+    margin: 18px 0;
+  }
+  .footer :global(.footer-cta .eyebrow) { font-size: 7px; letter-spacing: .08em; }
+  .footer :global(.footer-cta p) { max-width: 290px; line-height: 1.8; }
+  .footer :global(.footer-cta > .scroll-reveal:last-child) { width: 100%; }
+  .footer :global(.footer-cta .button) { width: 100%; justify-content: space-between; border-radius: 12px; min-height: 52px; }
+
+  .footer :global(.footer-columns) { gap: 12px; padding: 0 0 24px; }
+  .footer :global(.footer-columns > .scroll-reveal) { min-width: 0; }
+  .footer :global(.footer-columns > .scroll-reveal:first-child) { grid-column: 1 / -1; }
+  .footer :global(.footer-brand) {
+    position: relative;
+    padding: 24px 20px;
+    border: 1px solid rgb(var(--primary-rgb) / .2);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgb(var(--primary-rgb) / .07), rgb(var(--accent-rgb) / .025));
+  }
+  .footer :global(.footer-brand)::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 22px;
+    right: 22px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
+  }
+  .footer :global(.footer-brand p) { font-size: 12px; line-height: 1.9; margin: 18px 0; }
+  .footer :global(.footer-location) { display: block; font-size: 6px; line-height: 1.9; letter-spacing: .07em; }
+
+  .footer :global(.footer-columns > .scroll-reveal:nth-child(2) > div),
+  .footer :global(.footer-columns > .scroll-reveal:nth-child(3) > div) {
+    height: 100%;
+    padding: 20px 12px 12px;
+    border: 1px solid rgb(var(--border-default-rgb) / .35);
+    border-radius: 16px;
+    background: rgb(var(--card-rgb) / .6);
+  }
+  .footer :global(.footer-columns h3) { margin-bottom: 12px; font-size: 12px; letter-spacing: -.02em; }
+  .footer :global(.footer-columns > .scroll-reveal > div:not(.footer-brand) > a) {
+    min-height: 44px;
+    margin: 0;
+    padding: 8px 0;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .footer :global(.footer-columns > .scroll-reveal:last-child) { grid-column: 1 / -1; }
+  .footer :global(.footer-columns > .scroll-reveal:last-child > div) {
+    padding: 20px;
+    border: 1px solid rgb(var(--accent-rgb) / .2);
+    border-radius: 18px;
+    background: linear-gradient(130deg, rgb(var(--card-rgb) / .9), rgb(var(--accent-rgb) / .045));
+  }
+  .footer :global(.footer-columns > .scroll-reveal:last-child > div > a) {
+    justify-content: space-between;
+    color: var(--text);
+    border-bottom: 1px solid rgb(var(--border-default-rgb) / .3);
+    padding: 12px 0;
+    font-size: 12px;
+  }
+  .footer :global(.footer-columns > .scroll-reveal:last-child a svg) { color: var(--accent-text); flex-shrink: 0; }
+  .footer :global(.config-placeholder) { font-size: 9px; line-height: 1.8; margin: 12px 0 0; }
+  .footer :global(.footer-bottom) { align-items: center; flex-wrap: nowrap; gap: 12px; padding: 18px 0; font-size: 8px; line-height: 1.7; }
+  .footer :global(.footer-bottom > a) { flex-shrink: 0; display: flex; align-items: center; min-height: 44px; font-size: 7px; color: var(--link); }
+}

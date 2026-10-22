@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Environment secrets
+.env*
+!.env.example
+
+# Test outputs
+playwright-report/
+test-results/
+
+# Logs
+*.log
+
+# Deployment settings
+.vercel/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local previews
+*-preview.png
